@@ -215,6 +215,22 @@ p {
   color: var(--text);
 }
 
+
+.paypal-wrap {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.paypal-note {
+  margin: 0 0 0.8rem;
+  font-size: 0.95rem;
+}
+
+#paypal-button-container-P-1FR719478J294080YNGK3WYA {
+  max-width: 340px;
+  margin: 0.6rem auto 0;
+}
 .about,
 .compliance {
   padding: 1.8rem;

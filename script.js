@@ -89,4 +89,31 @@ document.addEventListener("DOMContentLoaded", () => {
     successMessage.textContent = "Thanks, your message has been received.";
     form.reset();
   });
+
+
+  if (window.paypal) {
+    window.paypal
+      .Buttons({
+        style: {
+          shape: "rect",
+          color: "gold",
+          layout: "vertical",
+          label: "subscribe",
+        },
+        createSubscription(data, actions) {
+          return actions.subscription.create({
+            plan_id: "P-1FR719478J294080YNGK3WYA",
+          });
+        },
+        onApprove(data) {
+          alert(`Subscription successful. ID: ${data.subscriptionID}`);
+          console.log("PayPal subscription approved:", data);
+        },
+        onError(error) {
+          console.error("PayPal subscription error:", error);
+        },
+      })
+      .render("#paypal-button-container-P-1FR719478J294080YNGK3WYA");
+  }
+
 });
